@@ -12,7 +12,7 @@ namespace Plane_project
 {
     public partial class FormPlane : Form
     {
-        private BomberPlane plane;
+        private ITransport plane;
         public FormPlane()
         {
             InitializeComponent();
@@ -21,7 +21,7 @@ namespace Plane_project
         {
             Bitmap bmp = new Bitmap(pictureBoxPlane.Width, pictureBoxPlane.Height);
             Graphics gr = Graphics.FromImage(bmp);
-           plane.DrawPlane(gr);
+            plane.DrawPlane(gr);
             pictureBoxPlane.Image = bmp;
         }
 
@@ -29,11 +29,19 @@ namespace Plane_project
         private void ButtonCreate_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            plane = new BomberPlane(rnd.Next(100, 400), rnd.Next(1000, 2100), Color.Gray,
-           Color.Red, true, true);
+            plane = new WarPlane(rnd.Next(100, 400), rnd.Next(1000, 2100), Color.Gray);
             plane.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxPlane.Width,
            pictureBoxPlane.Height);
             Draw();
+        }
+        private void ButtonCreateBomberPlane_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            plane = new BomberPlane(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Gray,
+           Color.Red, true, true);
+           plane.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxPlane.Width,
+           pictureBoxPlane.Height);
+            Draw();
         }
         private void buttonMove_Click(object sender, EventArgs e)
         {
@@ -57,6 +65,6 @@ namespace Plane_project
             Draw();
         }
 
-        
+       
     }
 }

@@ -30,11 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPlane));
             this.pictureBoxPlane = new System.Windows.Forms.PictureBox();
-            this.buttonCreate = new System.Windows.Forms.Button();
+            this.buttonCreateWarPlane = new System.Windows.Forms.Button();
             this.buttonUp = new System.Windows.Forms.Button();
             this.buttonDown = new System.Windows.Forms.Button();
             this.buttonRight = new System.Windows.Forms.Button();
             this.buttonLeft = new System.Windows.Forms.Button();
+            this.buttonCreateBomberPlane = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlane)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,15 +48,15 @@
             this.pictureBoxPlane.TabIndex = 0;
             this.pictureBoxPlane.TabStop = false;
             // 
-            // buttonCreate
+            // buttonCreateWarPlane
             // 
-            this.buttonCreate.Location = new System.Drawing.Point(15, 15);
-            this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(86, 31);
-            this.buttonCreate.TabIndex = 1;
-            this.buttonCreate.Text = "Создать";
-            this.buttonCreate.UseVisualStyleBackColor = true;
-            this.buttonCreate.Click += new System.EventHandler(this.ButtonCreate_Click);
+            this.buttonCreateWarPlane.Location = new System.Drawing.Point(15, 15);
+            this.buttonCreateWarPlane.Name = "buttonCreateWarPlane";
+            this.buttonCreateWarPlane.Size = new System.Drawing.Size(190, 31);
+            this.buttonCreateWarPlane.TabIndex = 1;
+            this.buttonCreateWarPlane.Text = "Создать военный самолет";
+            this.buttonCreateWarPlane.UseVisualStyleBackColor = true;
+            this.buttonCreateWarPlane.Click += new System.EventHandler(this.ButtonCreate_Click);
             // 
             // buttonUp
             // 
@@ -108,21 +109,31 @@
             this.buttonLeft.UseVisualStyleBackColor = false;
             this.buttonLeft.Click += new System.EventHandler(this.buttonMove_Click);
             // 
-            // Form1
+            // buttonCreateBomberPlane
+            // 
+            this.buttonCreateBomberPlane.Location = new System.Drawing.Point(226, 15);
+            this.buttonCreateBomberPlane.Name = "buttonCreateBomberPlane";
+            this.buttonCreateBomberPlane.Size = new System.Drawing.Size(240, 30);
+            this.buttonCreateBomberPlane.TabIndex = 6;
+            this.buttonCreateBomberPlane.Text = "Создать бомбардировщик";
+            this.buttonCreateBomberPlane.UseVisualStyleBackColor = true;
+            this.buttonCreateBomberPlane.Click += new System.EventHandler(this.ButtonCreateBomberPlane_Click);
+            // 
+            // FormPlane
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 453);
+            this.Controls.Add(this.buttonCreateBomberPlane);
             this.Controls.Add(this.buttonLeft);
             this.Controls.Add(this.buttonRight);
             this.Controls.Add(this.buttonDown);
             this.Controls.Add(this.buttonUp);
-            this.Controls.Add(this.buttonCreate);
+            this.Controls.Add(this.buttonCreateWarPlane);
             this.Controls.Add(this.pictureBoxPlane);
-            this.Name = "Form1";
+            this.Name = "FormPlane";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Бомбардировщик";
-          
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlane)).EndInit();
             this.ResumeLayout(false);
 
@@ -131,11 +142,12 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxPlane;
-        private System.Windows.Forms.Button buttonCreate;
+        private System.Windows.Forms.Button buttonCreateWarPlane;
         private System.Windows.Forms.Button buttonUp;
         private System.Windows.Forms.Button buttonDown;
         private System.Windows.Forms.Button buttonRight;
         private System.Windows.Forms.Button buttonLeft;
+        private System.Windows.Forms.Button buttonCreateBomberPlane;
     }
 }
 
