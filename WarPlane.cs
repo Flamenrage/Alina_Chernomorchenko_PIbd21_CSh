@@ -65,10 +65,6 @@ namespace Plane_project
 
             g.DrawEllipse(pen, _startPosX + 100, _startPosY - 32, 30, 180);
 
-            Brush brRed = new SolidBrush(Color.Red);
-
-            Brush brYellow = new SolidBrush(Color.Yellow);
-
             Brush br = new SolidBrush(MainColor);
 
             g.FillEllipse(br, _startPosX + 20, _startPosY + 33, 140, 44);
