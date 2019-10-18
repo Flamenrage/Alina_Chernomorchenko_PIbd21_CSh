@@ -9,9 +9,9 @@ namespace Plane_project
 {
     public class WarPlane : AirVehicle
     {
-        protected const int planeWidth = 100;
+        protected const int planeWidth = 150;
 
-        protected const int planeHeight = 60;
+        protected const int planeHeight = 100;
 
         public WarPlane(int maxSpeed, float weight, Color mainColor)
         {
@@ -60,20 +60,20 @@ namespace Plane_project
             Pen pen = new Pen(Color.Black, 5);
 
             //границы автомобиля
-            g.DrawEllipse(pen, _startPosX + 20, _startPosY + 33, 140, 44);
-            g.DrawRectangle(pen, _startPosX + 30, _startPosY + 23, 20, 64);
+            g.DrawEllipse(pen, _startPosX + 20 / 3, _startPosY + 33 / 3 , 140 / 3, 44 / 3);
+            g.DrawRectangle(pen, _startPosX + 30 / 3, _startPosY + 23 / 3, 20 / 3, 64 / 3);
 
-            g.DrawEllipse(pen, _startPosX + 100, _startPosY - 32, 30, 180);
+            g.DrawEllipse(pen, _startPosX + 100 / 3, _startPosY - 32 / 3, 30 / 3, 180 / 3);
 
             Brush br = new SolidBrush(MainColor);
 
-            g.FillEllipse(br, _startPosX + 20, _startPosY + 33, 140, 44);
-            g.FillRectangle(br, _startPosX + 30, _startPosY + 23, 20, 64);
-            g.FillEllipse(br, _startPosX + 100, _startPosY - 32, 30, 180);
+            g.FillEllipse(br, _startPosX + 20 / 3, _startPosY + 33 / 3, 140 / 3, 44 / 3);
+            g.FillRectangle(br, _startPosX + 30 / 3, _startPosY + 23 / 3, 20 / 3, 64 / 3);
+            g.FillEllipse(br, _startPosX + 100 / 3, _startPosY - 32 / 3, 30 / 3, 180 / 3);
             Pen pen2 = new Pen(Color.Black, 2);
-            g.DrawEllipse(pen2, _startPosX + 90, _startPosY + 42, 30, 20);
+            g.DrawEllipse(pen2, _startPosX + 90 / 3 , _startPosY + 42 / 3, 30 / 3, 20 / 3);
             Brush spoiler = new SolidBrush(Color.FromArgb(0, 236, 255));
-            g.FillEllipse(spoiler, _startPosX + 90, _startPosY + 42, 30, 20);
+            g.FillEllipse(spoiler, _startPosX + 90 / 3, _startPosY + 42 / 3, 30 / 3, 20 / 3);
 
         }
     }
