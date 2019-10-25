@@ -57,23 +57,24 @@ namespace Plane_project
         }
         public override void DrawPlane(Graphics g)
         {
+            int a = 3;
             Pen pen = new Pen(Color.Black, 5);
 
             //границы автомобиля
-            g.DrawEllipse(pen, _startPosX + 20 / 3, _startPosY + 33 / 3 , 140 / 3, 44 / 3);
-            g.DrawRectangle(pen, _startPosX + 30 / 3, _startPosY + 23 / 3, 20 / 3, 64 / 3);
+            g.DrawEllipse(pen, _startPosX + 20 / a, _startPosY + 33 / a , 140 / a, 44 / a);
+            g.DrawRectangle(pen, _startPosX + 30 / a, _startPosY + 23 / a, 20 / a, 64 / a);
 
-            g.DrawEllipse(pen, _startPosX + 100 / 3, _startPosY - 32 / 3, 30 / 3, 180 / 3);
+            g.DrawEllipse(pen, _startPosX + 100 / a, _startPosY - 32 / a, 30 / a, 180 / a);
 
             Brush br = new SolidBrush(MainColor);
 
-            g.FillEllipse(br, _startPosX + 20 / 3, _startPosY + 33 / 3, 140 / 3, 44 / 3);
-            g.FillRectangle(br, _startPosX + 30 / 3, _startPosY + 23 / 3, 20 / 3, 64 / 3);
-            g.FillEllipse(br, _startPosX + 100 / 3, _startPosY - 32 / 3, 30 / 3, 180 / 3);
+            g.FillEllipse(br, _startPosX + 20 / a, _startPosY + 33 / a, 140 / a, 44 / a);
+            g.FillRectangle(br, _startPosX + 30 / a, _startPosY + 23 / a, 20 / a, 64 / a);
+            g.FillEllipse(br, _startPosX + 100 / a, _startPosY - 32 / a, 30 / a, 180 / a);
             Pen pen2 = new Pen(Color.Black, 2);
-            g.DrawEllipse(pen2, _startPosX + 90 / 3 , _startPosY + 42 / 3, 30 / 3, 20 / 3);
+            g.DrawEllipse(pen2, _startPosX + 90 / a , _startPosY + 42 / a, 30 / a, 20 / a);
             Brush spoiler = new SolidBrush(Color.FromArgb(0, 236, 255));
-            g.FillEllipse(spoiler, _startPosX + 90 / 3, _startPosY + 42 / 3, 30 / 3, 20 / 3);
+            g.FillEllipse(spoiler, _startPosX + 90 / a, _startPosY + 42 / a, 30 / a, 20 / a);
 
         }
     }

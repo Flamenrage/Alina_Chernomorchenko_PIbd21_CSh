@@ -28,15 +28,15 @@ namespace Plane_project
                 public override void DrawPlane(Graphics g)
         {
             Pen pen = new Pen(Color.Black, 5);
-
+            int a = 3;
             if (Shoot)
             {
                 Pen pen2 = new Pen(Color.Black, 5);
-                g.DrawRectangle(pen2, _startPosX + 30 / 3 , _startPosY + 20 / 3, 30 / 3, 5 / 3);
-                g.DrawRectangle(pen2, _startPosX + 30 / 3, _startPosY + 83 / 3, 30 / 3, 5 / 3);
+                g.DrawRectangle(pen2, _startPosX + 30 / a , _startPosY + 20 / a, 30 / a, 5 / a);
+                g.DrawRectangle(pen2, _startPosX + 30 / a, _startPosY + 83 / a, 30 / a, 5 / a);
                 Brush brush2 = new SolidBrush(DopColor);
-                g.FillRectangle(brush2, _startPosX + 30 / 3, _startPosY + 20 / 3, 30 / 3, 5 / 3);
-                g.FillRectangle(brush2, _startPosX + 30 / 3, _startPosY + 83 / 3, 30 / 3, 5 / 3);
+                g.FillRectangle(brush2, _startPosX + 30 / a, _startPosY + 20 / a, 30 / a, 5 / a);
+                g.FillRectangle(brush2, _startPosX + 30 / a, _startPosY + 83 / a, 30 / a, 5 / a);
 
 
             }
@@ -44,24 +44,24 @@ namespace Plane_project
             {
 
                 Pen pen1 = new Pen(Color.Black, 1);
-                g.DrawEllipse(pen1, _startPosX + 133 / 3, _startPosY - 30 / 3, 15 / 3, 10 / 3);
-                g.DrawEllipse(pen1, _startPosX + 140 / 3, _startPosY - 5 / 3, 15 / 3, 10 / 3);
-                g.DrawEllipse(pen1, _startPosX + 140 / 3, _startPosY + 20 / 3, 15 / 3, 10 / 3);
+                g.DrawEllipse(pen1, _startPosX + 133 / a, _startPosY - 30 / a, 15 / a, 10 / a);
+                g.DrawEllipse(pen1, _startPosX + 140 / a, _startPosY - 5 / a, 15 / a, 10 / a);
+                g.DrawEllipse(pen1, _startPosX + 140 / a, _startPosY + 20 / a, 15 / a, 10 / a);
 
-                g.DrawEllipse(pen1, _startPosX + 133 / 3, _startPosY + 130 / 3, 15 / 3, 10 / 3);
-                g.DrawEllipse(pen1, _startPosX + 140 / 3, _startPosY + 105 / 3, 15 / 3, 10 / 3);
-                g.DrawEllipse(pen1, _startPosX + 140 / 3, _startPosY + 80 / 3, 15 / 3, 10 / 3);
+                g.DrawEllipse(pen1, _startPosX + 133 / a, _startPosY + 130 / a, 15 / a, 10 / a);
+                g.DrawEllipse(pen1, _startPosX + 140 / a, _startPosY + 105 / a, 15 / a, 10 / a);
+                g.DrawEllipse(pen1, _startPosX + 140 / a, _startPosY + 80 / a, 15 / a, 10 / a);
 
                 Brush spoiler = new SolidBrush(DopColor);
                
               
-                g.FillEllipse(spoiler, _startPosX + 133 / 3, _startPosY - 30 / 3, 15 / 3, 10 / 3);
-                g.FillEllipse(spoiler, _startPosX + 140 / 3, _startPosY - 5 / 3, 15 / 3, 10 / 3);
-                g.FillEllipse(spoiler, _startPosX + 140 / 3, _startPosY + 20 / 3, 15 / 3, 10 / 3);
+                g.FillEllipse(spoiler, _startPosX + 133 / a, _startPosY - 30 / a, 15 / a, 10 / a);
+                g.FillEllipse(spoiler, _startPosX + 140 / a, _startPosY - 5 / a, 15 / a, 10 / a);
+                g.FillEllipse(spoiler, _startPosX + 140 / a, _startPosY + 20 / a, 15 / a, 10 / a);
 
-                g.FillEllipse(spoiler, _startPosX + 133 / 3, _startPosY + 130 / 3, 15 / 3, 10 / 3);
-                g.FillEllipse(spoiler, _startPosX + 140 / 3, _startPosY + 105 / 3, 15 / 3, 10 / 3);
-                g.FillEllipse(spoiler, _startPosX + 140 / 3, _startPosY + 80 / 3, 15 / 3, 10 / 3);
+                g.FillEllipse(spoiler, _startPosX + 133 / a, _startPosY + 130 / a, 15 / a, 10 / a);
+                g.FillEllipse(spoiler, _startPosX + 140 / a, _startPosY + 105 / a, 15 / a, 10 / a);
+                g.FillEllipse(spoiler, _startPosX + 140 / a, _startPosY + 80 / a, 15 / a, 10 / a);
 
             }
             base.DrawPlane(g);
