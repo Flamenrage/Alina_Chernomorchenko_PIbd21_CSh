@@ -8,8 +8,12 @@ namespace Plane_project
 {
    public class BomberPlane : WarPlane
     {
-        
-        
+
+        public void SetDopColor(Color color)
+        {
+            DopColor = color;
+
+        }
         public Color DopColor { private set; get; }
         public bool Bombs { private set; get; }
         public bool Shoot { private set; get; }
@@ -68,6 +72,6 @@ namespace Plane_project
 
 
 
-        }
+        }       
     }
 }

@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.pictureBoxParking = new System.Windows.Forms.PictureBox();
-            this.buttonSetPlane = new System.Windows.Forms.Button();
-            this.buttonSetBomberPlane = new System.Windows.Forms.Button();
             this.groupBox = new System.Windows.Forms.GroupBox();
             this.pictureBoxTakePlane = new System.Windows.Forms.PictureBox();
             this.buttonTakePlane = new System.Windows.Forms.Button();
@@ -38,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelLevel = new System.Windows.Forms.Label();
             this.listBoxLevels = new System.Windows.Forms.ListBox();
+            this.buttonAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakePlane)).BeginInit();
@@ -51,33 +50,13 @@
             this.pictureBoxParking.TabIndex = 0;
             this.pictureBoxParking.TabStop = false;
             // 
-            // buttonSetPlane
-            // 
-            this.buttonSetPlane.Location = new System.Drawing.Point(722, 136);
-            this.buttonSetPlane.Name = "buttonSetPlane";
-            this.buttonSetPlane.Size = new System.Drawing.Size(120, 60);
-            this.buttonSetPlane.TabIndex = 1;
-            this.buttonSetPlane.Text = "Припарковать самолет";
-            this.buttonSetPlane.UseVisualStyleBackColor = true;
-            this.buttonSetPlane.Click += new System.EventHandler(this.ButtonSetPlane_Click);
-            // 
-            // buttonSetBomberPlane
-            // 
-            this.buttonSetBomberPlane.Location = new System.Drawing.Point(723, 202);
-            this.buttonSetBomberPlane.Name = "buttonSetBomberPlane";
-            this.buttonSetBomberPlane.Size = new System.Drawing.Size(119, 63);
-            this.buttonSetBomberPlane.TabIndex = 2;
-            this.buttonSetBomberPlane.Text = "Припарковать бомбардировщик";
-            this.buttonSetBomberPlane.UseVisualStyleBackColor = true;
-            this.buttonSetBomberPlane.Click += new System.EventHandler(this.ButtonSetBomberPlane_Click);
-            // 
             // groupBox
             // 
             this.groupBox.Controls.Add(this.pictureBoxTakePlane);
             this.groupBox.Controls.Add(this.buttonTakePlane);
             this.groupBox.Controls.Add(this.maskedTextBox);
             this.groupBox.Controls.Add(this.label1);
-            this.groupBox.Location = new System.Drawing.Point(723, 271);
+            this.groupBox.Location = new System.Drawing.Point(728, 308);
             this.groupBox.Name = "groupBox";
             this.groupBox.Size = new System.Drawing.Size(121, 290);
             this.groupBox.TabIndex = 3;
@@ -137,16 +116,25 @@
             this.listBoxLevels.TabIndex = 5;
             this.listBoxLevels.SelectedIndexChanged += new System.EventHandler(this.ListBoxLevels_SelectedIndexChanged_1);
             // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Location = new System.Drawing.Point(731, 173);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(118, 43);
+            this.buttonAdd.TabIndex = 6;
+            this.buttonAdd.Text = "Заказать самолет";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
+            // 
             // FormParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(857, 566);
+            this.ClientSize = new System.Drawing.Size(857, 621);
+            this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.listBoxLevels);
             this.Controls.Add(this.labelLevel);
             this.Controls.Add(this.groupBox);
-            this.Controls.Add(this.buttonSetBomberPlane);
-            this.Controls.Add(this.buttonSetPlane);
             this.Controls.Add(this.pictureBoxParking);
             this.Name = "FormParking";
             this.Text = "PlaneParking";
@@ -162,8 +150,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxParking;
-        private System.Windows.Forms.Button buttonSetPlane;
-        private System.Windows.Forms.Button buttonSetBomberPlane;
         private System.Windows.Forms.GroupBox groupBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBoxTakePlane;
@@ -171,5 +157,6 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBox;
         private System.Windows.Forms.Label labelLevel;
         private System.Windows.Forms.ListBox listBoxLevels;
+        private System.Windows.Forms.Button buttonAdd;
     }
 }

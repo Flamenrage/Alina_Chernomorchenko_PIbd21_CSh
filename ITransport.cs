@@ -14,6 +14,8 @@ namespace Plane_project
       
      void MoveTransport(Direction direction);
        
-     void DrawPlane(Graphics g);        
+     void DrawPlane(Graphics g);
+
+     void SetMainColor(Color color);
     }
 }
