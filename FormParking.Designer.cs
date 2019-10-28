@@ -32,10 +32,12 @@
             this.buttonSetPlane = new System.Windows.Forms.Button();
             this.buttonSetBomberPlane = new System.Windows.Forms.Button();
             this.groupBox = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.buttonTakePlane = new System.Windows.Forms.Button();
             this.pictureBoxTakePlane = new System.Windows.Forms.PictureBox();
+            this.buttonTakePlane = new System.Windows.Forms.Button();
+            this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelLevel = new System.Windows.Forms.Label();
+            this.listBoxLevels = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakePlane)).BeginInit();
@@ -51,9 +53,9 @@
             // 
             // buttonSetPlane
             // 
-            this.buttonSetPlane.Location = new System.Drawing.Point(725, 11);
+            this.buttonSetPlane.Location = new System.Drawing.Point(722, 136);
             this.buttonSetPlane.Name = "buttonSetPlane";
-            this.buttonSetPlane.Size = new System.Drawing.Size(120, 90);
+            this.buttonSetPlane.Size = new System.Drawing.Size(120, 60);
             this.buttonSetPlane.TabIndex = 1;
             this.buttonSetPlane.Text = "Припарковать самолет";
             this.buttonSetPlane.UseVisualStyleBackColor = true;
@@ -61,9 +63,9 @@
             // 
             // buttonSetBomberPlane
             // 
-            this.buttonSetBomberPlane.Location = new System.Drawing.Point(725, 107);
+            this.buttonSetBomberPlane.Location = new System.Drawing.Point(723, 202);
             this.buttonSetBomberPlane.Name = "buttonSetBomberPlane";
-            this.buttonSetBomberPlane.Size = new System.Drawing.Size(119, 98);
+            this.buttonSetBomberPlane.Size = new System.Drawing.Size(119, 63);
             this.buttonSetBomberPlane.TabIndex = 2;
             this.buttonSetBomberPlane.Text = "Припарковать бомбардировщик";
             this.buttonSetBomberPlane.UseVisualStyleBackColor = true;
@@ -75,28 +77,20 @@
             this.groupBox.Controls.Add(this.buttonTakePlane);
             this.groupBox.Controls.Add(this.maskedTextBox);
             this.groupBox.Controls.Add(this.label1);
-            this.groupBox.Location = new System.Drawing.Point(725, 232);
+            this.groupBox.Location = new System.Drawing.Point(723, 271);
             this.groupBox.Name = "groupBox";
             this.groupBox.Size = new System.Drawing.Size(121, 290);
             this.groupBox.TabIndex = 3;
             this.groupBox.TabStop = false;
             this.groupBox.Text = "Забрать самолет";
             // 
-            // label1
+            // pictureBoxTakePlane
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Место";
-            // 
-            // maskedTextBox
-            // 
-            this.maskedTextBox.Location = new System.Drawing.Point(18, 57);
-            this.maskedTextBox.Name = "maskedTextBox";
-            this.maskedTextBox.Size = new System.Drawing.Size(30, 22);
-            this.maskedTextBox.TabIndex = 1;
+            this.pictureBoxTakePlane.Location = new System.Drawing.Point(10, 125);
+            this.pictureBoxTakePlane.Name = "pictureBoxTakePlane";
+            this.pictureBoxTakePlane.Size = new System.Drawing.Size(110, 157);
+            this.pictureBoxTakePlane.TabIndex = 3;
+            this.pictureBoxTakePlane.TabStop = false;
             // 
             // buttonTakePlane
             // 
@@ -108,19 +102,48 @@
             this.buttonTakePlane.UseVisualStyleBackColor = true;
             this.buttonTakePlane.Click += new System.EventHandler(this.ButtonTakePlane_Click);
             // 
-            // pictureBoxTakePlane
+            // maskedTextBox
             // 
-            this.pictureBoxTakePlane.Location = new System.Drawing.Point(10, 125);
-            this.pictureBoxTakePlane.Name = "pictureBoxTakePlane";
-            this.pictureBoxTakePlane.Size = new System.Drawing.Size(110, 157);
-            this.pictureBoxTakePlane.TabIndex = 3;
-            this.pictureBoxTakePlane.TabStop = false;
+            this.maskedTextBox.Location = new System.Drawing.Point(18, 57);
+            this.maskedTextBox.Name = "maskedTextBox";
+            this.maskedTextBox.Size = new System.Drawing.Size(30, 22);
+            this.maskedTextBox.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Место";
+            // 
+            // labelLevel
+            // 
+            this.labelLevel.AutoSize = true;
+            this.labelLevel.Location = new System.Drawing.Point(725, 8);
+            this.labelLevel.Name = "labelLevel";
+            this.labelLevel.Size = new System.Drawing.Size(60, 17);
+            this.labelLevel.TabIndex = 4;
+            this.labelLevel.Text = "Уровни:";
+            // 
+            // listBoxLevels
+            // 
+            this.listBoxLevels.FormattingEnabled = true;
+            this.listBoxLevels.ItemHeight = 16;
+            this.listBoxLevels.Location = new System.Drawing.Point(725, 32);
+            this.listBoxLevels.Name = "listBoxLevels";
+            this.listBoxLevels.Size = new System.Drawing.Size(116, 84);
+            this.listBoxLevels.TabIndex = 5;
+            this.listBoxLevels.SelectedIndexChanged += new System.EventHandler(this.ListBoxLevels_SelectedIndexChanged_1);
             // 
             // FormParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(857, 566);
+            this.Controls.Add(this.listBoxLevels);
+            this.Controls.Add(this.labelLevel);
             this.Controls.Add(this.groupBox);
             this.Controls.Add(this.buttonSetBomberPlane);
             this.Controls.Add(this.buttonSetPlane);
@@ -132,6 +155,7 @@
             this.groupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakePlane)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -145,5 +169,7 @@
         private System.Windows.Forms.PictureBox pictureBoxTakePlane;
         private System.Windows.Forms.Button buttonTakePlane;
         private System.Windows.Forms.MaskedTextBox maskedTextBox;
+        private System.Windows.Forms.Label labelLevel;
+        private System.Windows.Forms.ListBox listBoxLevels;
     }
 }
