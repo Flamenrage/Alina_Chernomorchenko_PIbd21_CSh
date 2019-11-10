@@ -10,28 +10,16 @@ namespace Plane_project
     public class Parking<T> where T : class, ITransport
     {
 
-        /// <summary>
-        /// Массив объектов, которые храним
-        /// </summary>
         private Dictionary<int, T> _places;
         private int _maxCount;
         private int PictureWidth { get; set; }
-        /// <summary>
-        /// Высота окна отрисовки
-        /// </summary>
+       
         private int PictureHeight { get; set; }
 
         private const int _placeSizeWidth = 210;
-        /// <summary>
-        /// Размер парковочного места (высота)
-        /// </summary>
+        
         private const int _placeSizeHeight = 80;
-        /// <summary>
-        /// Конструктор
-        /// </summary>
-        /// <param name="sizes">Количество мест на парковке</param>
-        /// <param name="pictureWidth">Рамзер парковки - ширина</param>
-        /// <param name="pictureHeight">Рамзер парковки - высота</param>
+        
         public Parking(int sizes, int pictureWidth, int pictureHeight)
         {
             _maxCount = sizes;
@@ -40,13 +28,7 @@ namespace Plane_project
             PictureHeight = pictureHeight;
             
         }
-        /// <summary>
-        /// Перегрузка оператора сложения
-        /// Логика действия: на парковку добавляется автомобиль
-        /// </summary>
-        /// <param name="p">Парковка</param>
-        /// <param name="car">Добавляемый автомобиль</param>
-        /// <returns></returns>
+        
         public static int operator +(Parking<T> p, T car)
         {
             if (p._places.Count == p._maxCount)
@@ -67,14 +49,6 @@ namespace Plane_project
             return -1;
         }
 
-        /// <summary>
-        /// Перегрузка оператора вычитания
-        /// Логика действия: с парковки забираем автомобиль
-        /// </summary>
-        /// <param name="p">Парковка</param>
-        /// <param name="index">Индекс места, с которого пытаемся извлечь
-
-        /// <returns></returns>
         public static T operator -(Parking<T> p, int index)
         {
             if (!p.CheckFreePlace(index))
@@ -85,22 +59,10 @@ namespace Plane_project
             }
             return null;
         }
-
-        /// <summary>
-        /// Метод проверки заполнености парковочного места (ячейки массива)
-        /// </summary>
-        /// <param name="index">Номер парковочного места (порядковый номер в
-
-        /// <returns></returns>
         private bool CheckFreePlace(int index)
         {
             return !_places.ContainsKey(index);
         }
-
-        /// <summary>
-        /// Метод отрисовки парковки
-        /// </summary>
-        /// <param name="g"></param>
         public void Draw(Graphics g)
         {
             DrawMarking(g);
@@ -110,10 +72,6 @@ namespace Plane_project
                 _places[keys[i]].DrawPlane(g);
             }
         }
-        /// <summary>
-        /// Метод отрисовки разметки парковочных мест
-        /// </summary>
-        /// <param name="g"></param>
         private void DrawMarking(Graphics g)
         {
             Pen pen = new Pen(Color.Black, 3);
