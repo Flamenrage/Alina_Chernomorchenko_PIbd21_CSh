@@ -19,6 +19,16 @@ namespace Plane_project
             Weight = weight;
             MainColor = mainColor;
         }
+        public WarPlane(string info)
+        {
+            string[] strs = info.Split(';');
+            if (strs.Length == 3)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+            }
+        }
         public override void MoveTransport(Direction direction)
         {
             float step = MaxSpeed * 100 / Weight;
@@ -76,6 +86,10 @@ namespace Plane_project
             Brush spoiler = new SolidBrush(Color.FromArgb(0, 236, 255));
             g.FillEllipse(spoiler, _startPosX + 90 / a, _startPosY + 42 / a, 30 / a, 20 / a);
 
+        }
+        public override string ToString()
+        {
+            return MaxSpeed + ";" + Weight + ";" + MainColor.Name;
         }
     }
 }

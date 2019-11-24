@@ -28,8 +28,20 @@ namespace Plane_project
             Bombs = bombs;
             Shoot = shoot;
         }
-     
-                public override void DrawPlane(Graphics g)
+        public BomberPlane(string info) : base(info)
+        {
+            string[] strs = info.Split(';');
+            if (strs.Length == 6)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+                DopColor = Color.FromName(strs[3]);
+                Bombs= Convert.ToBoolean(strs[4]);
+                Shoot = Convert.ToBoolean(strs[5]);
+            }
+        }
+        public override void DrawPlane(Graphics g)
         {
             Pen pen = new Pen(Color.Black, 5);
             int a = 3;
@@ -69,9 +81,10 @@ namespace Plane_project
 
             }
             base.DrawPlane(g);
-
-
-
-        }       
+        }        public override string ToString()
+        {
+            return base.ToString() + ";" + DopColor.Name + ";" + Bombs + ";" +
+           Shoot;
+        }
     }
 }
