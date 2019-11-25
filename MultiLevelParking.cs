@@ -18,7 +18,7 @@ namespace Plane_project
         /// Сколько мест на каждом уровне
         /// </summary>
 
-        private const int countPlaces = 20;
+        private const int countPlaces = 15;
         /// <summary>
         /// Конструктор
         /// </summary>
@@ -58,7 +58,7 @@ namespace Plane_project
                 return null;
             }
         }
-        public bool SaveData(string filename)
+        public void SaveData(string filename)
         {
             if (File.Exists(filename))
             {
@@ -72,30 +72,32 @@ namespace Plane_project
                     sw.WriteLine("Level");
                     for (int i = 0; i < countPlaces; i++)
                     {
+                        try { 
                         var plane = level[i];
-                        if (plane != null)
-                        {
-                            if (plane.GetType().Name == "WarPlane")
+                            if (plane != null)
                             {
-                                sw.Write(i + ":WarPlane:");
+                                if (plane.GetType().Name == "WarPlane")
+                                {
+                                    sw.Write(i + ":WarPlane:");
+                                }
+                                if (plane.GetType().Name == "BomberPlane")
+                                {
+                                    sw.Write(i + ":BomberPlane:");
+                                }
+                                sw.WriteLine(plane);
                             }
-                            if (plane.GetType().Name == "BomberPlane")
-                            {
-                                sw.Write(i + ":BomberPlane:");
-                            }
-                            sw.WriteLine(plane);
                         }
+                        finally { }
                     }
                 }
-                return true;
             }
         }
 
-        public bool LoadData(string filename)
+        public void LoadData(string filename)
         {
             if (!File.Exists(filename))
             {
-                return false;
+                throw new FileNotFoundException();
             }
             string buffer = "";
             using (StreamReader sr = new StreamReader(filename))
@@ -111,7 +113,7 @@ namespace Plane_project
                 }
                 else
                 {
-                    return false;
+                    throw new Exception("Неверный формат файла");
                 }
                 int counter = -1;
                 ITransport plane = null;
@@ -139,8 +141,6 @@ namespace Plane_project
                     parkingStages[counter][Convert.ToInt32(buffer.Split(':')[0])] = plane;
                 }
             }
-            return true;
-
         }
     }
 }
