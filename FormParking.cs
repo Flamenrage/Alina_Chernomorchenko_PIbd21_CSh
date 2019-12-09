@@ -117,11 +117,7 @@ namespace Plane_project
                 }
             }
         }
-        private void listBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Draw(); 
-        }
-
+      
         private void ListBoxLevels_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             Draw();
