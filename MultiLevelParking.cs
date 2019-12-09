@@ -72,8 +72,8 @@ namespace Plane_project
                     sw.WriteLine("Level");
                     for (int i = 0; i < countPlaces; i++)
                     {
-                        try { 
-                        var plane = level[i];
+                        foreach (ITransport plane in level) { 
+                    
                             if (plane != null)
                             {
                                 if (plane.GetType().Name == "WarPlane")
@@ -87,7 +87,6 @@ namespace Plane_project
                                 sw.WriteLine(plane);
                             }
                         }
-                        finally { }
                     }
                 }
             }
@@ -116,12 +115,14 @@ namespace Plane_project
                     throw new Exception("Неверный формат файла");
                 }
                 int counter = -1;
+                int counterPlane = 0;
                 ITransport plane = null;
                 while ((buffer = sr.ReadLine()) != null)
                 {
                     if (buffer == "Level")
                     {
                         counter++;
+                        counterPlane = 0;
                         parkingStages.Add(new Parking<ITransport>(countPlaces, pictureWidth, pictureHeight));
                         continue;
                     }
@@ -138,9 +139,13 @@ namespace Plane_project
                     {
                         plane = new BomberPlane(buffer.Split(':')[2]);
                     }
-                    parkingStages[counter][Convert.ToInt32(buffer.Split(':')[0])] = plane;
+                    parkingStages[counter][counterPlane++] = plane;
                 }
             }
+        }
+        public void Sort()
+        {
+            parkingStages.Sort();
         }
     }
 }

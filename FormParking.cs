@@ -119,6 +119,12 @@ namespace Plane_project
                     MessageBox.Show(ex.Message, "Переполнение", MessageBoxButtons.OK,
                    MessageBoxIcon.Error);
                 }
+                catch (ParkingAlreadyHaveException ex)
+                {
+                    
+                MessageBox.Show(ex.Message, "Дублирование", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                }
                 catch (Exception ex)
                 {
                     logger.Error("Неизвестная ошибка");
@@ -173,6 +179,13 @@ namespace Plane_project
                 }
                 Draw();
             }
+        }
+
+        private void Button_sort_Click(object sender, EventArgs e)
+        {
+            parking.Sort();
+            Draw();
+            logger.Info("Сортировка уровней");
         }
     }
 

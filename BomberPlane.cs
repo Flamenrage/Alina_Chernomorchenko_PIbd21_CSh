@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 namespace Plane_project
 {
-   public class BomberPlane : WarPlane
+   public class BomberPlane : WarPlane, IComparable<BomberPlane>, IEquatable<BomberPlane>
     {
 
         public void SetDopColor(Color color)
@@ -85,6 +85,90 @@ namespace Plane_project
         {
             return base.ToString() + ";" + DopColor.Name + ";" + Bombs + ";" +
            Shoot;
+        }
+        /// Метод интерфейса IComparable для класса SportCar
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public int CompareTo(BomberPlane other)
+        {
+            var res = (this is WarPlane).CompareTo(other is WarPlane);
+            if (res != 0)
+            {
+                return res;
+            }
+            if (DopColor != other.DopColor)
+            {
+                DopColor.Name.CompareTo(other.DopColor.Name);
+            }
+            if (Bombs != other.Bombs)
+            {
+                return Bombs.CompareTo(other.Bombs);
+            }
+            if (Shoot != other.Shoot)
+            {
+                return Shoot.CompareTo(other.Shoot);
+            }
+            return 0;
+        }
+        /// <summary>
+        /// Метод интерфейса IEquatable для класса SportCar
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public bool Equals(BomberPlane other)
+        {
+            var res = (this as WarPlane).Equals(other as WarPlane);
+            if (!res)
+            {
+                return res;
+            }
+            if (GetType().Name != other.GetType().Name)
+            {
+                return false;
+            }
+            if (DopColor != other.DopColor)
+            {
+                return false;
+            }
+            if (Bombs != other.Bombs)
+            {
+                return false;
+            }
+         
+            if (Shoot != other.Shoot)
+            {
+                return false;
+            }
+            return true;
+        }
+        /// <summary>
+        /// Перегрузка метода от object
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public override bool Equals(Object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is BomberPlane carObj))
+            {
+                return false;
+            }
+            else
+            {
+                return Equals(carObj);
+            }
+        }
+        /// <summary>
+        /// Перегрузка метода от object
+        /// </summary>
+        /// <returns></returns>
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }
