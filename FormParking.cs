@@ -1,4 +1,4 @@
-﻿using NLog;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,7 +23,6 @@ namespace Plane_project
         private const int countLevel = 5;
         private Logger logger;
         public FormParking()
-
         {
             InitializeComponent();
             logger = LogManager.GetCurrentClassLogger();
@@ -46,8 +45,7 @@ namespace Plane_project
                 parking[listBoxLevels.SelectedIndex].Draw(gr);
                 pictureBoxParking.Image = bmp;
             }
-        }
-
+        }
         private void ButtonTakePlane_Click(object sender, EventArgs e)
         {
             if (listBoxLevels.SelectedIndex > -1)
@@ -84,13 +82,9 @@ namespace Plane_project
                     }
                 }
 
-            }
-        }
-        private void listBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Draw(); 
-        }
+            }
 
+        }
         private void ListBoxLevels_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             Draw();
@@ -111,7 +105,6 @@ namespace Plane_project
                     int place = parking[listBoxLevels.SelectedIndex] + plane;
                     logger.Info("Добавлен автомобиль " + plane.ToString() + " на место " + place);               
                     Draw();
-                    
                 }
                 catch (ParkingOverflowException ex)
                 {
@@ -127,7 +120,6 @@ namespace Plane_project
                 }
             }
         }
-
         private void СохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -147,7 +139,6 @@ namespace Plane_project
                 }
             }
         }
-
         private void ЗагрузитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -175,5 +166,5 @@ namespace Plane_project
             }
         }
     }
-
 }
+
