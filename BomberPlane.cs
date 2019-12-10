@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +12,6 @@ namespace Plane_project
         public void SetDopColor(Color color)
         {
             DopColor = color;
-
         }
         public Color DopColor { private set; get; }
         public bool Bombs { private set; get; }
@@ -53,8 +52,6 @@ namespace Plane_project
                 Brush brush2 = new SolidBrush(DopColor);
                 g.FillRectangle(brush2, _startPosX + 30 / a, _startPosY + 20 / a, 30 / a, 5 / a);
                 g.FillRectangle(brush2, _startPosX + 30 / a, _startPosY + 83 / a, 30 / a, 5 / a);
-
-
             }
             if (Bombs)
             {
@@ -81,7 +78,8 @@ namespace Plane_project
 
             }
             base.DrawPlane(g);
-        }        public override string ToString()
+        }
+        public override string ToString()
         {
             return base.ToString() + ";" + DopColor.Name + ";" + Bombs + ";" +
            Shoot;

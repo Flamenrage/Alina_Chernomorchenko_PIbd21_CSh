@@ -1,3 +1,4 @@
+
 ﻿using NLog;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,6 @@ using System.Windows.Forms;
 namespace Plane_project
 {
     public partial class FormParking : Form
-       
     {
         /// <summary>
         /// Объект от класса многоуровневой парковки
@@ -46,8 +46,7 @@ namespace Plane_project
                 parking[listBoxLevels.SelectedIndex].Draw(gr);
                 pictureBoxParking.Image = bmp;
             }
-        }
-
+        }
         private void ButtonTakePlane_Click(object sender, EventArgs e)
         {
             if (listBoxLevels.SelectedIndex > -1)
@@ -67,7 +66,6 @@ namespace Plane_project
                         pictureBoxTakePlane.Image = bmp;
                         logger.Info("Изъят самолет " + plane.ToString() + " с места " + maskedTextBox.Text);
                         Draw();
-
                     }
                     catch (ParkingNotFoundException ex)
                     {
@@ -83,8 +81,7 @@ namespace Plane_project
                         MessageBox.Show(ex.Message, "Неизвестная ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-
-            }
+            }
         }
         private void listBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -95,7 +92,6 @@ namespace Plane_project
         {
             Draw();
         }
-
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
             form = new FormPlaneConfig();
@@ -124,7 +120,8 @@ namespace Plane_project
                     
                 MessageBox.Show(ex.Message, "Дублирование", MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
-                }
+                }
+
                 catch (Exception ex)
                 {
                     logger.Error("Неизвестная ошибка");
@@ -133,7 +130,6 @@ namespace Plane_project
                 }
             }
         }
-
         private void СохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -153,7 +149,6 @@ namespace Plane_project
                 }
             }
         }
-
         private void ЗагрузитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -180,7 +175,6 @@ namespace Plane_project
                 Draw();
             }
         }
-
         private void Button_sort_Click(object sender, EventArgs e)
         {
             parking.Sort();
@@ -188,5 +182,4 @@ namespace Plane_project
             logger.Info("Сортировка уровней");
         }
     }
-
 }
