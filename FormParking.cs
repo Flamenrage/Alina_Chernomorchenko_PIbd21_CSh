@@ -1,3 +1,4 @@
+
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,8 +44,7 @@ namespace Plane_project
                 parking[listBoxLevels.SelectedIndex].Draw(gr);
                 pictureBoxParking.Image = bmp;
             }
-        }
-
+        }
         private void ButtonTakePlane_Click(object sender, EventArgs e)
         {
             if (listBoxLevels.SelectedIndex > -1)
@@ -71,13 +71,8 @@ namespace Plane_project
                     }
                     Draw();
                 }
-            }
+            }
         }
-        private void listBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Draw(); 
-        }
-
         private void ListBoxLevels_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             Draw();
@@ -141,5 +136,4 @@ MessageBoxIcon.Information);
             }
         }
     }
-
 }
