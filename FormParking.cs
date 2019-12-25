@@ -81,9 +81,7 @@ namespace Plane_project
                         MessageBox.Show(ex.Message, "Неизвестная ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-
             }
-
         }
         private void ListBoxLevels_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -103,7 +101,7 @@ namespace Plane_project
                 try
                 {
                     int place = parking[listBoxLevels.SelectedIndex] + plane;
-                    logger.Info("Добавлен автомобиль " + plane.ToString() + " на место " + place);               
+                    logger.Info("Добавлен самолет " + plane.ToString() + " на место " + place);               
                     Draw();
                 }
                 catch (ParkingOverflowException ex)
