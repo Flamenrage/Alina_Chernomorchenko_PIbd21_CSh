@@ -105,7 +105,7 @@ namespace Plane_project
                 try
                 {
                     int place = parking[listBoxLevels.SelectedIndex] + plane;
-                    logger.Info("Добавлен автомобиль " + plane.ToString() + " на место " + place);               
+                    logger.Info("Добавлен самолет " + plane.ToString() + " на место " + place);               
                     Draw();
                     
                 }

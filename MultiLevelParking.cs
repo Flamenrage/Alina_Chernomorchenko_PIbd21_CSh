@@ -9,7 +9,6 @@ namespace Plane_project
 {
     class MultiLevelParking
     {
-
         /// <summary>
         /// Список с уровнями парковки
         /// </summary>
@@ -91,8 +90,8 @@ namespace Plane_project
                 }
             }
         }
-
-        public void LoadData(string filename)
+     
+        public bool LoadData(string filename)
         {
             if (!File.Exists(filename))
             {
@@ -142,6 +141,7 @@ namespace Plane_project
                     parkingStages[counter][counterPlane++] = plane;
                 }
             }
+            return true;
         }
         public void Sort()
         {
@@ -149,4 +149,3 @@ namespace Plane_project
         }
     }
 }
-
